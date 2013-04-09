@@ -10,10 +10,11 @@ class Validate_IsUrl extends Zend_Validate_Abstract
 {
 
     const INVALID_URL = 'invalidUrl';
+    const EXCEPTION = 'Exception';
 
     protected $_messageTemplates = array(
         self::EXCEPTION => "'%value%' is not a valid URL",
-        self::INVALID_URI => "'%value%' is not a valid URL. Invalid string provided.",
+        self::INVALID_URL => "'%value%' is not a valid URL. Invalid string provided.",
     );
 
     public function isValid($value)
