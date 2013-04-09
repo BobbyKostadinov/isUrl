@@ -9,8 +9,8 @@
 class Validate_IsUrl extends Zend_Validate_Abstract
 {
 
-    const INVALID_URL = 'invalidUrl';
-    const EXCEPTION = 'Exception';
+    const INVALID_URL  = 'invalidUrl';
+    const EXCEPTION    = 'exception';
 
     protected $_messageTemplates = array(
         self::EXCEPTION => "'%value%' is not a valid URL",
@@ -35,7 +35,7 @@ class Validate_IsUrl extends Zend_Validate_Abstract
         }
         
         //Perform validation on all parts of the URL - host, query string etc
-        if (false === $uriHttp->valid()) {
+        if (!$uriHttp->valid()) {
             $this->_error(self::INVALID_URL);
             return false;
         }
